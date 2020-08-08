@@ -1,6 +1,10 @@
 # NBA-Talk-Public
 Public code for my project website
 
+<h2> please see public hosted webite here: http://www.nbatalks.xyz/</h2>
+
+Instructiopn below are for how to run the website locally. But As of now Aug - 2020 the website is up and running.
+
 The application is written in Node Js (v14.6.0) using es6 functionalities. So most likely to run it you will need to add  "type": "module" to your package.json file and use node version 12 or above. Should you choose not to use the package.json file provided.
 
 Required Node dependencies to be installed with npm:
