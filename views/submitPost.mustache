@@ -1,0 +1,42 @@
+<style> 
+  .postStyle {
+    color: #fff;
+  }
+</style> 
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<div class="card">
+    <h3 >{{message}}</h3></br>
+      <form id="postForm" method='post' action='/members/createPost' enctype="multipart/form-data">
+        <label for="text">Create Text Post:</label>
+        <select id="context" name ="context"> 
+        <option value="text" id="text">Text post</option>
+        <option value="picture" id="picture">Picture post</option>
+        </select> <br /> <br />
+        
+        <label for="title">Title:</label>
+        
+          <input type="text" name="title" id="title"> <br /> <br />
+          <div class="poststyle" id ="text_select">
+          <textarea rows="5" cols="40" name="data"> </textarea> <br />
+        </div>
+       <div class="poststyle" id ="picture_select">
+          <label for="img">Select image:</label>
+          <input type="file" id="img" name="data" accept="image/*">
+        </div></br></br>
+        <input id="submit" type="submit" >
+      </form>
+</div>
+<script>
+$("select").change(function(){
+    $(this).find("option:selected").each(function(){
+        var optionValue = $(this).attr("value");
+        if(optionValue){
+            $(".poststyle").not("#" + optionValue + "_select").val('').hide();
+            $("#" + optionValue + "_select").show();
+        } else{
+            $(".poststyle").hide();
+        }
+    });
+}).change();
+
+</script>

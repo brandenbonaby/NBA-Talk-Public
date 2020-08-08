@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">{{username}}{{Welcome}}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav" style="color: #e3f2fd;">
+    {{#team}}
+      <li class="nav-item">
+        <a class="nav-link" href="/members">{{team}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/myPosts">My Posts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/teamReport">Team Report</a>
+      </li> 
+    {{/team}}   
+    {{#displaylogin}}
+      <li class="nav-item">
+        <a class="nav-link" href="/home">Home</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="/signup">Signup</a>
+      </li>
+    {{/displaylogin}}
+    {{#displaylogout}}
+      <li class="nav-item">
+        <a class="nav-link" href="/login/logout">Logout</a>
+      </li> 
+    {{/displaylogout}}
+    </ul>
+  </div>  
+</nav>
+  {{#teamLogo}}
+    <div class="bg" style="background-image: url(../{{teamLogo}});" >
+  {{/teamLogo}}   

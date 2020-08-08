@@ -1,0 +1,28 @@
+{{>header}}
+
+{{>navigation}}
+<div class="container" style="margin-top:10px margin-bottom:10px">
+  <div class=" row">
+    <div class="col-lg-12">
+      <div class="card align-items-center">
+        <h2>Login</h2>
+        <p>New user? <a href="/signup">Sign-up</a> for an account today!</p>
+        <p>Enter your username and password below to login.</p>
+        <p style="color:red;">{{ login_error }}</p>
+        <form action="/login/attemptlogin" method="post">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" name="username" class="form-control" placeholder="username"> 
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label> 
+            <input type="password" name="password" class="form-control" placeholder="password"> 
+          </div>
+          <input type="submit" value="Login" class="btn btn-primary">
+        </form> <br />
+      </div>
+    </div>
+  </div>
+</div>
+
+{{>footer}}

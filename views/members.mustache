@@ -1,0 +1,34 @@
+{{>header}}
+
+{{>navigation}}
+<h2 class="text-center" style="text-shadow: white 0px 0px 10px; ">Welcome to the fan page of the {{team}}!</h2>
+<div class="container" style="margin-top:30px" >
+  
+  <div class="row">
+    <div class="col-sm-6">
+      {{#posts}}
+        <div class="card">
+          <h2>{{title}}</h2>
+          <p><em><span class="font-italic">User:</span> {{ username }}</em> <em><span class="font-italic">Posted</span> {{ date }}</em></p>
+          {{{text}}}
+          {{#location}}
+            <img src={{{location}}} />
+           {{/location}}
+        </div>
+      {{/posts}}
+      {{#noPosts}}
+        <div class="card ">
+          <p class="font-weight-bold">{{noPosts}}</p>
+        </div>
+      {{/noPosts}}
+    </div>
+    <div class="col-sm-6 ">
+      <div class="sticky-top"> 
+        {{>submitPost}}
+      </div> 
+    </div>
+  </div>
+</div> 
+</div>
+{{>footer}}
+    

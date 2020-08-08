@@ -1,0 +1,54 @@
+{{>header}}
+
+{{>navigation}}
+
+<div class="container" style="margin-top:30px">
+  <h2 class="text-center">Current players for the {{team}}!</h2>
+  <div class="col-lg-12">
+   <div class="card">
+    <div class="table-responsive">
+      <table class="table table-hover">
+      <thead>
+        <tr >
+          <th class="sticky-top" scope="col">First name</th>
+          <th scope="col">Last name</th>
+          <th scope="col">Years Pro</th>
+          <th scope="col">College</th>
+          <th scope="col">Country</th>
+          <th scope="col">D.O.B</th>
+          <th scope="col">Affiliation</th>
+          <th scope="col">NBA start date</th>
+          <th scope="col">Height (m)</th>
+          <th scope="col">Weight (kg)</th>
+          <th scope="col">Jersey#</th>
+          <th scope="col">Position</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#report}}
+        <tr>
+          <td>{{firstName}}</td>
+          <td>{{lastName}}</td>
+          <td>{{yearsPro}}</td>
+          <td>{{collegeName}}</td>
+          <td>{{country}}</td>
+          <td>{{dateOfBirth}}</td>
+          <td>{{affiliation}}</td>
+          <td>{{startNba}}</td>
+          <td>{{heightInMeters}}</td>
+          <td>{{weightInKilograms}}</td>
+          <td>{{jersey}}</td>
+          <td>{{pos}}</td>
+        </tr>
+        {{/report}}
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+  
+    
+
+
+{{>footer}}
