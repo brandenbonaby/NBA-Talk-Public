@@ -5,6 +5,8 @@ Public code for my project website
 
 Instruction's below are for how to run the website locally. But As of now Aug - 2020 the website is up and running.
 
+Here is a link for the architectural documentation I created for the website. https://drive.google.com/file/d/1l3ZlZnSpUjGM8ejPW13N6t33S5HAzdhZ/view?usp=sharing
+
 The application is written in Node Js (v14.6.0) using es6 functionalities. So most likely to run it you will need to add  "type": "module" to your package.json file and use node version 12 or above. Should you choose not to use the package.json file provided.
 
 Required Node dependencies to be installed with npm:
@@ -29,3 +31,5 @@ next you can simply run the following to start the website:
 node app.js
 
 the website will be located at: http://localhost:8081/
+
+Added: 
