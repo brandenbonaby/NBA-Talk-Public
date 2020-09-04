@@ -19,7 +19,7 @@ export default class NbaClass extends SportsClass {
     getTeamPath(team, candidatePath){
         return new Promise ((resolve) => {
             function returnResults(res){
-                candidatePath += res[0].api_ID;
+                candidatePath += res.api_ID;
                 resolve(candidatePath);
             }
             NbaTalksModel.getApiTeam(team,returnResults);

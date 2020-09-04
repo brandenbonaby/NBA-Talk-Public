@@ -75,17 +75,17 @@ membersRouter.post("/createPost", fileUpload.single('data'), function(req, res)
       req.session.message = "Post successfully added!";
     else 
       req.session.message = "Error occurred, post upload unsuccessful, please try again"
-
+      console.log(req.file);
     return res.redirect('back');
   }
 
-  if (req.body.context === "picture" && req.file.fileSize < maxFileSize)
+  if (req.body.context === "picture" && req.file.size <= maxFileSize)
     userData = req.file;
   else if (req.body.context === "text")
     userData = req.body.data;
   else
     return createMemberPage('Error');
-
+  
   proxyPost.createPost(req.session.username,req.body.title,
                         userData,req.session.team,req.body.context,
                         createMemberPage);

@@ -37,22 +37,21 @@ loginRouter.post("/attemptlogin", function(req, res)
 	}
 
 	function sendToUserHomePage (account){
-		console.log(account[0].logo)
-		req.session.teamLogo = account[0].logo;
+		req.session.teamLogo = account.logo;
 		res.redirect("/members");
 	}
 
 	function prepareTeamLogo (account){
 		req.session.username = req.body.username;
-		req.session.role = account[0].role;
-		req.session.team = account[0].team;
-		NbaTalksModel.getTeamLogo(account[0].team,sendToUserHomePage);
+		req.session.role = account.role;
+		req.session.team = account.team;
+		NbaTalksModel.getTeamLogo(account.team,sendToUserHomePage);
 	}
 	function validateAccount(account){
-		if (account === undefined || account.length == 0){
+		if (account === undefined){
 			return errorOccured ();
 		}
-		var passwordHash = account[0].password; 
+		var passwordHash = account.password; 
 		bcrypt.compare(req.body.password,passwordHash, function(err, ret) {
 			if (ret){
 				return prepareTeamLogo (account);

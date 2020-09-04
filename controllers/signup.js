@@ -27,7 +27,7 @@ signupRouter.get("/", function(req, res)
 	} 
   req.session.signup_error = "";
   function sendTeams(teams) {
-	req.TPL.teams = JSON.parse(JSON.stringify(teams));
+	req.TPL.teams = teams;
 	res.render("signup", req.TPL);
   }
   NbaTalksModel.getAllTeams(sendTeams);
@@ -55,20 +55,16 @@ signupRouter.post("/attemptsignup", function(req, res)
 	
 	function signUpError (user) {
 		req.session.errorTitle = "Oh no something went wrong!";
-		if (user === undefined) {
-			req.session.signup_error = "Sorry! Something went wrong on our end.";
-		}
-		else if ( user.length > 0) {
+		if (user !== undefined) {
 			req.session.signup_error = "Username is already in use! please choose a different one.";
-		}
-		else{
+		} else {
 			req.session.signup_error = "Username/password error please try again!";
 		}
 		res.redirect("/signup");
 	}
 
 	function confirmExistence(user){
-		if (user === undefined || user.length > 0 || req.body.username.length < 1 || req.body.password.length < 8 || req.body.password !== req.body.confirmPassword) {
+		if (user !== undefined || req.body.username.length < 1 || req.body.password.length < 8 || req.body.password !== req.body.confirmPassword) {
 			return signUpError(user);
 		}
 		else {

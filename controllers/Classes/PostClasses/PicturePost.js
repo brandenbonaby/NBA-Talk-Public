@@ -27,7 +27,7 @@ export default class PicturePost extends Post {
         if(mimetype && extname) {
             this.addToDatabase(table, column, returnCallback);
         } else {
-            returnCallback({Error: 'Error: Images Only!'});
+            returnCallback({Error: 'Error: .jpeg, .jpg, .png, .gif Images Only!'});
         }
     }
     

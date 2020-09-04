@@ -38,15 +38,15 @@ export class PostProxy {
      * @param {string}   column - column in picture table
      * @param {string}   key - the value in the table we want
      *                            all posts to belong to
-     * @param {object}   inst - the calling functions 'This' object
+     * @param {object}   instance - the calling functions 'This' object
      * @return {Promise<JSON>} All picture posts associated with key.
      */ 
-    getPicturePosts(column,key,inst){
+    getPicturePosts(column,key,instance){
         return new Promise (resolve => {
             function setResults(res){
                 resolve(res);
             }
-            inst.picPost.getFromDatabase("Picture_Posts", column, key, setResults);
+            instance.picPost.getFromDatabase("Picture_Posts", column, key, setResults);
         });    
     }
 
@@ -56,15 +56,15 @@ export class PostProxy {
      * @param {string}   column - column in picture table
      * @param {string}   key - the value in the table we want
      *                            all posts to belong to
-     * @param {object}   inst - the calling functions 'This' object
+     * @param {object}   instance - the calling functions 'This' object
      * @return {Promise<JSON>} All text posts associated with key.
      */ 
-    getTextPosts(column,key,inst){
+    getTextPosts(column,key,instance){
         return new Promise (resolve => {
             function setResults(res){
                 resolve(res);
             }
-           inst.texPost.getFromDatabase("Text_Posts", column, key, setResults)
+            instance.texPost.getFromDatabase("Text_Posts", column, key, setResults)
             
         });
     }
