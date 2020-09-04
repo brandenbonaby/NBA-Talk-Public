@@ -1,35 +1,24 @@
 # NBA-Talk-Public
 Public code for my project website
 
-<h2> please see public hosted webite here: http://www.nbatalks.xyz/</h2>
+<h3> please see public hosted webite here: http://www.nbatalks.xyz/</h3>
 
-Instruction's below are for how to run the website locally. But As of now Aug - 2020 the website is up and running.
+Instruction's below are for how to run the website locally. But As of now Aug - 2020 the website is up and running, as my proof of concept (likely to change in the future).
 
-Here is a link for the architectural documentation I created for the website. https://drive.google.com/file/d/1l3ZlZnSpUjGM8ejPW13N6t33S5HAzdhZ/view?usp=sharing
+Here is a link for the architectural documentation I created for the website. you might want to download it so that you can zoom in and out using Adobe reader.
+https://drive.google.com/file/d/1l3ZlZnSpUjGM8ejPW13N6t33S5HAzdhZ/view?usp=sharing
 
-The application is written in Node Js (v14.6.0) using es6 functionalities. So most likely to run it you will need to add  "type": "module" to your package.json file and use node version 12 or above. Should you choose not to use the package.json file provided.
+The application is written in Node Js (v14.6.0) using es6 functionalities. So most likely to run it you will need to add  "type": "module" to your package.json file and use node version 12 or above. Should you choose not to use the package.json file provided at least.
 
-Required Node dependencies to be installed with npm:
-- "bcrypt": "^5.0.0",
-- "express": "^4.17.1",
-- "express-mustache": "^1.0.4",
-- "express-session": "^1.17.0",
-- "fs-extra": "^9.0.1",
-- "moment": "^2.27.0",
-- "multer": "^1.4.2",
-- "mustache-express": "^1.2.8",
-- "mysql": "^2.18.1",
+Required: package.JSON file for dependencies
 
 
-To run it locally you also need to provide an API key in the nbaAPI.js file. If I haven't provided you one you can get a free one at https://rapidapi.com/api-sports/api/api-nba
-You also need to provide a hostname, username, password and database for the mySQL pool in NbaTalksModel.js. I used https://www.clever-cloud.com/en/ to get a mySql database running in the cloud.
+To run it locally you also need to provide an API key in the nbaAPI.js file. I have provided this for you. The private repository uses a cloud mysql database with a connection pool but in this public repository I have implemented the database using sqlite3. This should allow you to quickly clone this repository and spin up the website, without having to worry about that stuff. If you're interested you can get a new nba api key here https://rapidapi.com/api-sports/api/api-nba and use your own. For the private repository I used https://www.clever-cloud.com/en/ (if you wanted to know at least).
 
 That ends the prerequisites:
 
 next you can simply run the following to start the website:
 
-node app.js
+**node app.js** or **nodemon app.js** which ever one you like to use more.
 
 the website will be located at: http://localhost:8081/
-
-Added: 
