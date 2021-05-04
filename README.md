@@ -1,7 +1,4 @@
 # NBA-Talk-Public
-Public code for my project website
-
-<h3> please see public hosted webite here: http://www.nbatalks.xyz/</h3>
 
 Instruction's below are for how to run the website locally. But As of now Aug - 2020 the website is up and running, as my proof of concept (likely to change in the future).
 
